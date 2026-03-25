@@ -15,21 +15,26 @@ import com.pks.rating_data_service.model.UserRating;
 @RequestMapping("/ratingData")
 public class MovieRatingController {
 
-	@GetMapping("/{movieId}")
-	public Rating getRating(@PathVariable String movieId)
-	{
-		return new Rating(movieId,5);
-	}
-	
+
 	@GetMapping("/users/{userId}")
 	public UserRating getUserRating(@PathVariable String userId)
 	{
 		List<Rating> ratings = Arrays.asList(
-				new Rating("1111",4),
-				new Rating("1213",77)
+				new Rating(userId,77)
 				);
+//		int randomNumber = (int)(Math.random() * 10) + 1;
+//		try
+//		{
+//			System.out.println("thread wait time is "+randomNumber);
+//			Thread.sleep(randomNumber*1000);
+//		}
+//		catch (Exception e)
+//		{
+//
+//		}
 		UserRating userRating = new UserRating();
 		userRating.setUserRatings(ratings);
+		System.out.println("returning rating from controller");
 		return userRating;
 	}
 

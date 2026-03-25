@@ -7,7 +7,7 @@ public class UserRating {
 	public List<Rating> userRatings;
 
 	public UserRating() {
-		
+
 	}
 
 	public List<Rating> getUserRatings() {
@@ -17,7 +17,15 @@ public class UserRating {
 	public void setUserRatings(List<Rating> userRatings) {
 		this.userRatings = userRatings;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "UserRating{" +
+				"userRatings=" + userRatings +
+				'}';
+	}
+
+
+
 
 }
