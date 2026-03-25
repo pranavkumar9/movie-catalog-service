@@ -1,13 +1,18 @@
 package com.pks.movie_catalog_service.Model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Movie {
 
 	private String movieId;
-	private String Name;
-	public Movie(String movieId, String name) {
+	private String name;
+	private String overview;
+	public Movie(String movieId, String name, String overview) {
 		super();
 		this.movieId = movieId;
-		Name = name;
+		this.name = name;
+		this.overview = overview;
+
 	}
 	public Movie() {
 		super();
@@ -19,15 +24,19 @@ public class Movie {
 		this.movieId = movieId;
 	}
 	public String getName() {
-		return Name;
+		return this.name;
 	}
-	public void setName(String name) {
-		Name = name;
-	}
+	public void setName(String name) { this.name = name; }
+	public String getOverview() {return overview; }
+	public void setOverview(String overview) {
+		this.overview = overview; }
+
 	@Override
 	public String toString() {
-		return "Movie [movieId=" + movieId + ", Name=" + Name + "]";
+		return "Movie{" +
+				"movieId='" + movieId + '\'' +
+				", name='" + name + '\'' +
+				", overView='" + overview + '\'' +
+				'}';
 	}
-	
-	
 }
